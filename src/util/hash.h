@@ -6,12 +6,12 @@ typedef struct Node {
     void *value;
     // the key is NULL if the node is empty
     char *key;
-} hashNode;
+} HashNode;
 
 typedef struct {
     int stored;        // # of items in hashtable
     int capacity;      // # of entries that can fit in the table
-    hashNode *entries; // collection of entries
+    HashNode *entries; // collection of entries
 } HashMap;
 
 // initialize. returns pointer to the hashMap
@@ -31,3 +31,9 @@ void hm_remove(HashMap *hm, const char *key);
 
 // hashes the keys
 uint64_t hash(const char *key);
+
+int test_hash_init();
+
+int test_hash_init_and_store();
+
+int test_hash_set_and_get();
